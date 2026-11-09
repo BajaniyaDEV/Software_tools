@@ -1,0 +1,97 @@
+Hands-On Git Exercise
+======================
+
+Step 1: Setup (5 mins)
+----------------------
+1. Install Git (if not already):
+   - Windows: https://git-scm.com/
+   - Mac/Linux: comes pre-installed, check with:
+     git --version
+
+2. Configure Git (first time only):
+   git config --global user.name "Your Name"
+   git config --global user.email "your_email@example.com"
+
+
+Step 2: Create Your First Repository (10 mins)
+----------------------------------------------
+# Make a project folder
+mkdir my-first-git-project
+cd my-first-git-project
+
+# Initialize a git repo
+git init
+
+# Create a file
+echo "print('Hello AI/ML World!')" > app.py
+
+# Track and commit it
+git add app.py
+git commit -m "Initial commit: added app.py"
+
+
+Step 3: Versioning & History (10 mins)
+--------------------------------------
+# Make a change
+echo "print('Adding new feature')" >> app.py
+
+# Stage & commit
+git add app.py
+git commit -m "Added new feature"
+
+# View history
+git log --oneline
+
+
+Step 4: Branching & Merging (15 mins)
+-------------------------------------
+# Create a new branch
+git checkout -b feature-branch
+
+# Edit file
+echo "print('Feature branch code')" >> app.py
+
+# Commit on feature branch
+git add app.py
+git commit -m "Feature branch changes"
+
+# Switch back to main
+git checkout main
+
+# Merge feature into main
+git merge feature-branch
+
+
+Step 5: Remote Collaboration (15 mins)
+--------------------------------------
+1. On GitHub → create a new repo (empty).
+2. Link local repo to GitHub:
+   git remote add origin https://github.com/your-username/my-first-git-project.git
+   git branch -M main
+   git push -u origin main
+
+3. Verify on GitHub → file appears online.
+4. Simulate collaboration:
+   - Make a change in GitHub UI (edit file).
+   - Pull changes locally:
+     git pull origin main
+
+
+Step 6: Bonus – GitHub Issues & Actions (Optional 10–15 mins)
+-------------------------------------------------------------
+- Show students how to open an Issue (e.g., "Add README.md").
+- Then in terminal:
+  echo "# My First Git Project" > README.md
+  git add README.md
+  git commit -m "Added README"
+  git push origin main
+
+- Close the issue on GitHub → demonstrates collaboration.
+
+Exercise for Students
+----------------------
+1. Create their own repo.
+2. Add 2–3 commits with meaningful messages.
+3. Create a new branch → add code → merge back.
+4. Push to GitHub.
+5. Open an Issue + resolve it.
